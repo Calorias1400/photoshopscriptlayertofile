@@ -2090,7 +2090,8 @@ function removeAllInvisible(docRef) {
 
 function exportChildren(dupObj, orgObj, exportInfo, dupDocRef, fileNamePrefix) {
 
-    for( var i = 0; i < dupObj.artLayers.length; i++) {
+    var layerCounter = 1; // Counter starting from 1
+    for( var i = dupObj.artLayers.length - 1; i >= 0; i--) { // Process from bottom to top
 
         if (exportInfo.visibleOnly) { // visible layer only
 
@@ -2190,9 +2191,9 @@ function exportChildren(dupObj, orgObj, exportInfo, dupDocRef, fileNamePrefix) {
 
         var fileNameBody = fileNamePrefix;
 
-        fileNameBody += "_" + zeroSuppress(i, 4);
+        fileNameBody += "_" + layerCounter; // Use counter starting from 1
 
-        fileNameBody += "_" + layerName;
+        // Remove the layer name from the filename
 
         fileNameBody = fileNameBody.replace(/[:\/\\*\?\"\<\>\|]/g, "_");  // '/\:*?"<>|' -> '_'
 
@@ -2210,9 +2211,11 @@ function exportChildren(dupObj, orgObj, exportInfo, dupDocRef, fileNamePrefix) {
 
         dupObj.artLayers[i].visible = false;
 
+        layerCounter++; // Increment counter for next layer
+
     }
 
-    for( var i = 0; i < dupObj.layerSets.length; i++) {
+    for( var i = dupObj.layerSets.length - 1; i >= 0; i--) { // Process layer sets from bottom to top
 
         if (exportInfo.visibleOnly) { // visible layer only
 
