@@ -104,3 +104,27 @@ Si tienes un documento con capas llamadas "Fondo", "Texto", "Logo" (de arriba ha
 3. `FONDO_3.png` (Fondo - primera capa, última exportada)
 
 Los cambios aseguran que el orden de exportación sea inverso (de abajo hacia arriba), la numeración empiece en 1, y el nombre sea limpio con solo el prefijo elegido y el número correspondiente.
+
+---
+
+## ✅ Archivo Listo para Usar
+
+**El archivo `Layer to lyrics v2_MODIFICADO.jsx` está listo para usar en Photoshop.**
+
+### Instrucciones de uso:
+1. Abre Photoshop con tu documento de capas
+2. Ve a **Archivo > Scripts > Examinar...**
+3. Selecciona el archivo `Layer to lyrics v2_MODIFICADO.jsx`
+4. En la ventana que aparece:
+   - Elige la carpeta de destino
+   - Escribe el prefijo deseado (ej: "FONDO")
+   - Selecciona el formato de archivo (PNG, JPG, etc.)
+   - Haz clic en "Run"
+
+### Resultado esperado:
+- Las capas se exportarán de abajo hacia arriba
+- Los archivos se nombrarán: `PREFIJO_1.png`, `PREFIJO_2.png`, etc.
+- La numeración empezará en 1
+
+### Solución al Error de Git:
+Si el script anterior te daba error de comandos Git, ahora usa este archivo nuevo `Layer to lyrics v2_MODIFICADO.jsx` que está limpio y listo para funcionar.
